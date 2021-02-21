@@ -6,9 +6,9 @@ var io = require("socket.io")(server, {
   },
 });
 
-server.listen(8000);
+server.listen(process.env.PORT || 8000);
 
-console.log(`listening on localhost:8000`);
+console.log(`listening on https://justyoga.herokuapp.com:${process.env.PORT}`);
 
 io.on("connection", function (socket) {
   socket.on("join", function (data) {
